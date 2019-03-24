@@ -1,0 +1,6 @@
+com\ge\app\webcrawler\util\ParseUtils.class
+com\ge\app\webcrawler\processor\WebPageProcessor.class
+com\ge\app\webcrawler\representation\WebPageCrawlResult.class
+com\ge\app\webcrawler\App.class
+com\ge\app\webcrawler\model\WebPage.class
+com\ge\app\webcrawler\processor\WebPageProcessorImpl.class
