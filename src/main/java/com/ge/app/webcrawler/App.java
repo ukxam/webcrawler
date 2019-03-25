@@ -46,12 +46,13 @@ public class App {
 		}
 
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
-		for (String webPageName : fileNames) {
+		fileNames.parallelStream().forEach(webPageName -> {
 			WebPageProcessor processor = new WebPageProcessorImpl();
 			CompletableFuture.supplyAsync(() ->ParseUtils.parseFileToRetrievePages(webPageName)
 			, executorService)
 			.thenApplyAsync(res -> processor.crawlWebPages(webPageName,res))
 			.thenAcceptAsync(res -> processor.printCrawlingResults(res));
-		}
+		});
 	}
+	
 }
